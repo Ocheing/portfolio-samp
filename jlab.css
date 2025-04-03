@@ -24,8 +24,12 @@ body {
 }
 
 .shield {
-    width: 150px;
-    height: 180px;
+    width: 15vw;
+    /* Responsive width */
+    height: 18vw;
+    /* Responsive height */
+    max-width: 150px;
+    max-height: 180px;
     background: transparent;
     position: relative;
     clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 50% 100%, 0% 60%, 10% 20%);
@@ -38,7 +42,9 @@ body {
 
 .letter {
     position: absolute;
-    font-size: 50px;
+    font-size: 4vw;
+    /* Responsive font size */
+    max-font-size: 50px;
     font-weight: bold;
     color: #0077FF;
     text-align: center;
@@ -94,6 +100,34 @@ body {
         opacity: 1;
     }
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+    /* Tablets */
+    .shield {
+        width: 20vw;
+        height: 24vw;
+    }
+
+    .letter {
+        font-size: 6vw;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Mobile */
+    .shield {
+        width: 25vw;
+        height: 30vw;
+    }
+
+    .letter {
+        font-size: 8vw;
+    }
+}
+
 
 /* Header styling */
 header {
