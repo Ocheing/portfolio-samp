@@ -8,6 +8,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Full-screen Animation Container */
 .container {
     position: fixed;
     top: 0;
@@ -184,7 +185,7 @@ header {
         display: flex;
     }
 
-    nav ul {
+    .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
@@ -197,7 +198,7 @@ header {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    #menu-toggle:checked+.hamburger-menu+nav ul {
+    #menu-toggle:checked~nav .nav-links {
         display: flex;
     }
 }
