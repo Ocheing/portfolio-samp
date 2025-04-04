@@ -27,9 +27,9 @@ body {
 /* Shield (Logo Shape) */
 .shield {
     width: 150px;
-    /* Fixed size for desktop */
+    /* Standard size for desktop */
     height: 180px;
-    /* Fixed size for desktop */
+    /* Standard size for desktop */
     background: transparent;
     position: relative;
     clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 50% 100%, 0% 60%, 10% 20%);
@@ -43,8 +43,8 @@ body {
 /* Letter inside the shield */
 .letter {
     position: absolute;
-    font-size: 70px;
-    /* Increase letter size for desktop */
+    font-size: 50px;
+    /* Letter size for desktop */
     font-weight: bold;
     color: #0077FF;
     text-align: center;
@@ -93,7 +93,7 @@ body {
 ================================== */
 @media (max-width: 768px) {
 
-    /* Adjust shield size for smaller screens (tablets) */
+    /* Adjust shield size for tablets */
     .shield {
         width: 40vw;
         height: 40vh;
@@ -108,7 +108,7 @@ body {
 
 @media (max-width: 480px) {
 
-    /* Further adjust shield size for very small devices (mobile phones) */
+    /* Further adjust shield size for mobile */
     .shield {
         width: 50vw;
         height: 50vh;
@@ -117,10 +117,9 @@ body {
     /* Increase letter size for mobile */
     .letter {
         font-size: 20vw;
-        /* Even larger font size for mobile */
+        /* Larger font for mobile */
     }
 }
-
 
 
 
@@ -140,8 +139,9 @@ body {
     }
 }
 
-
-/*  Header and Navigation*/
+/* ===============================
+   Header and Navigation
+================================== */
 header {
     display: flex;
     justify-content: space-between;
@@ -167,11 +167,6 @@ header {
     height: 75px;
     clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 50% 100%, 0% 60%, 10% 20%);
     border: 4px solid #0077FF;
-}
-
-.letter {
-    font-size: 24px;
-    color: #0077FF;
 }
 
 /* Navigation Links */
@@ -255,6 +250,7 @@ nav ul li a:focus {
     color: #ffffff;
 }
 
+
 /* ===============================
    Responsive Navigation (Mobile & Tablet)
 ================================== */
@@ -268,31 +264,23 @@ nav ul li a:focus {
     margin-right: 20px;
 }
 
-/* Important: hide checkbox */
-#menu-toggle-checkbox {
-    display: none;
-}
-
-/* Allow nav-links flex display on desktop */
 .nav-links {
     display: flex;
 }
 
-/* MOBILE STYLES */
+/* Mobile & Tablet styles */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
-    }
-
-    nav {
-        flex-grow: 1;
+        margin-right: 30px;
+        /* More space between the toggle and the logo */
     }
 
     .nav-links {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 60px;
         left: 0;
         width: 100%;
         background-color: #0a192f;
@@ -318,13 +306,11 @@ nav ul li a:focus {
         background-color: #0077FF;
     }
 
-    /* Toggle: Show menu when checked */
-    #menu-toggle-checkbox:checked~nav .nav-links {
+    /* Toggle menu visibility when the button is clicked (focused) */
+    .menu-toggle:focus+.nav-links {
         display: flex;
     }
 }
-
-
 
 
 .hero {
