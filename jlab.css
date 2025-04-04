@@ -43,7 +43,7 @@ body {
 /* Letter inside the shield */
 .letter {
     position: absolute;
-    font-size: 50px;
+    font-size: 40px;
     /* Letter size for desktop */
     font-weight: bold;
     color: #0077FF;
@@ -190,7 +190,25 @@ nav ul li a:focus {
     outline: none;
 }
 
-/* Resume Dropdown */
+/* ===============================
+   Responsive Navigation (Mobile & Tablet)
+================================== */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+    background: none;
+    border: none;
+    margin-right: 20px;
+}
+
+.nav-links {
+    display: flex;
+}
+
+
+/* Resume Button Styling */
 .resume-btn-container {
     position: relative;
     display: inline-block;
@@ -201,10 +219,13 @@ nav ul li a:focus {
     border: 1px solid #3B82F6;
     padding: 10px 15px;
     text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
     border-radius: 5px;
     transition: all 0.3s ease;
 }
 
+/* Hover effect for resume button */
 .resume-btn:hover,
 .resume-btn:focus {
     background-color: #3B82F6;
@@ -212,6 +233,7 @@ nav ul li a:focus {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Dropdown Menu Styling */
 .resume-dropdown {
     display: none;
     position: absolute;
@@ -222,6 +244,7 @@ nav ul li a:focus {
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
     z-index: 1;
     min-width: 200px;
+    transition: all 0.3s ease;
 }
 
 .resume-btn-container:hover .resume-dropdown,
@@ -229,6 +252,7 @@ nav ul li a:focus {
     display: block;
 }
 
+/* Dropdown items styling */
 .resume-dropdown a {
     display: flex;
     align-items: center;
@@ -250,22 +274,31 @@ nav ul li a:focus {
     color: #ffffff;
 }
 
-
-/* ===============================
-   Responsive Navigation (Mobile & Tablet)
-================================== */
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #ffffff;
-    background: none;
-    border: none;
-    margin-right: 20px;
+/* Links for downloading and viewing resumes */
+.view-resume,
+.download-resume {
+    color: #64ffda;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    padding: 0 12px;
 }
 
-.nav-links {
-    display: flex;
+/* Icon spacing in resume links */
+.view-resume i,
+.download-resume i {
+    margin-right: 8px;
+}
+
+/* Hover effects for resume links */
+.view-resume:hover,
+.download-resume:hover {
+    background-color: #0077FF;
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 119, 255, 0.5);
 }
 
 /* Mobile & Tablet styles */
@@ -276,6 +309,7 @@ nav ul li a:focus {
         /* More space between the toggle and the logo */
     }
 
+    /* Hide nav links by default on small devices */
     .nav-links {
         display: none;
         flex-direction: column;
@@ -306,11 +340,12 @@ nav ul li a:focus {
         background-color: #0077FF;
     }
 
-    /* Toggle menu visibility when the button is clicked (focused) */
-    .menu-toggle:focus+.nav-links {
+    /* Show navigation links when checkbox is checked */
+    .menu-toggle-checkbox:checked+.menu-toggle+.nav-links {
         display: flex;
     }
 }
+
 
 
 .hero {
