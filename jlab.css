@@ -101,8 +101,8 @@ body {
 
     /* Increase letter size for tablets */
     .letter {
-        font-size: 15vw;
-        /* Larger font for tablets */
+        font-size: 10vw;
+        /* Adjusted font size for tablets */
     }
 }
 
@@ -116,10 +116,11 @@ body {
 
     /* Increase letter size for mobile */
     .letter {
-        font-size: 20vw;
-        /* Larger font for mobile */
+        font-size: 12vw;
+        /* Adjusted font size for mobile */
     }
 }
+
 
 
 
