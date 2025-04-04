@@ -190,24 +190,6 @@ nav ul li a:focus {
     outline: none;
 }
 
-/* ===============================
-   Responsive Navigation (Mobile & Tablet)
-================================== */
-.menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #ffffff;
-    background: none;
-    border: none;
-    margin-right: 20px;
-}
-
-.nav-links {
-    display: flex;
-}
-
-
 /* Resume Button Styling */
 .resume-btn-container {
     position: relative;
@@ -301,15 +283,40 @@ nav ul li a:focus {
     box-shadow: 0 0 10px rgba(0, 119, 255, 0.5);
 }
 
+/* ===============================
+   Responsive Navigation (Mobile & Tablet)
+================================== */
+
+/* Menu toggle */
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff;
+    background: none;
+    border: none;
+    margin-right: 20px;
+}
+
+.nav-links {
+    display: flex;
+}
+
+/* Hide the checkbox by default (on desktop) */
+.menu-toggle-checkbox {
+    display: none;
+}
+
 /* Mobile & Tablet styles */
 @media (max-width: 768px) {
+
+    /* Show menu toggle (hamburger icon) on small screens */
     .menu-toggle {
         display: block;
         margin-right: 30px;
-        /* More space between the toggle and the logo */
     }
 
-    /* Hide nav links by default on small devices */
+    /* Hide nav links by default on small screens */
     .nav-links {
         display: none;
         flex-direction: column;
@@ -340,13 +347,11 @@ nav ul li a:focus {
         background-color: #0077FF;
     }
 
-    /* Show navigation links when checkbox is checked */
+    /* Display nav links when checkbox is checked */
     .menu-toggle-checkbox:checked+.menu-toggle+.nav-links {
         display: flex;
     }
 }
-
-
 
 .hero {
     text-align: center;
