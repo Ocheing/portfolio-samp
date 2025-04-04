@@ -284,40 +284,40 @@ nav ul li a:focus {
     box-shadow: 0 0 10px rgba(0, 119, 255, 0.5);
 }
 
+
+
 /* ===============================
    Responsive Navigation (Mobile & Tablet)
 ================================== */
 
-/* Menu toggle */
+/* Hide the menu toggle checkbox and button by default */
+.menu-toggle-checkbox,
 .menu-toggle {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: #ffffff;
-    background: none;
-    border: none;
-    margin-right: 20px;
+    display: none !important;
+    /* Ensures they're hidden on desktop */
 }
 
+/* Default navigation (Desktop) */
 .nav-links {
     display: flex;
-}
-
-/* Hide the checkbox by default (on desktop) */
-.menu-toggle-checkbox {
-    display: none;
+    gap: 20px;
 }
 
 /* Mobile & Tablet styles */
 @media (max-width: 768px) {
 
-    /* Show menu toggle (hamburger icon) on small screens */
+    /* Show menu toggle button only on small screens */
     .menu-toggle {
-        display: block;
+        display: block !important;
+        font-size: 24px;
+        cursor: pointer;
+        color: #ffffff;
+        background: none;
+        border: none;
         margin-right: 30px;
     }
 
-    /* Hide nav links by default on small screens */
+    /* Hide navigation links initially */
     .nav-links {
         display: none;
         flex-direction: column;
@@ -348,11 +348,15 @@ nav ul li a:focus {
         background-color: #0077FF;
     }
 
-    /* Display nav links when checkbox is checked */
-    .menu-toggle-checkbox:checked+.menu-toggle+.nav-links {
+    /* Show navigation when checkbox is checked */
+    .menu-toggle-checkbox:checked~.nav-links {
         display: flex;
     }
 }
+
+
+
+
 
 .hero {
     text-align: center;
